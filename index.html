@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centro Digital Store — periféricos gamer, componentes y merchandising oficial con stock real.">
+    <meta name="theme-color" content="#07080c">
+    <title>Gaming Store | Centro Digital</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
+
+    <!-- Encabezado / Navegación -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html">CENTRO DIGITAL <span>/ STORE</span></a>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav id="primaryNav" aria-label="Navegación principal">
+            <ul>
+                <li><a href="#" class="active" data-category="all">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#catalogo" id="navOfertas">Ofertas</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="icon-btn" id="wishlistBtn" type="button" aria-label="Ver favoritos">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <span id="wishlistCount" class="counter">0</span>
+            </button>
+            <button class="icon-btn cart-icon" id="cartBtn" type="button" aria-haspopup="dialog" aria-label="Abrir carrito de compras">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M7 4h-2l-1 2v1h2l3.6 7.59-1.35 2.44c-.16.29-.25.63-.25.97 0 1.1.9 2 2 2h11v-2h-11l1.1-2h6.5c.75 0 1.4-.41 1.75-1.03l3.58-6.47c.08-.16.12-.34.12-.5 0-.55-.45-1-1-1h-13.9l-.95-2zm3 15c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm7 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                <span id="cartCount" class="counter">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Banner Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="tag">Periféricos &amp; hardware</span>
+            <h1>Equípate para la victoria</h1>
+            <p>Periféricos profesionales, componentes de última generación y merchandising oficial, con stock real y precios claros.</p>
+            <a href="#catalogo" class="btn-primary">Explorar tienda</a>
+
+            <ul class="hero-perks">
+                <li><strong id="shippingPerk">Envío gratis</strong><span id="shippingPerkNote">en compras desde $150.000</span></li>
+                <li><strong>12 meses</strong><span>de garantía oficial</span></li>
+                <li><strong>Stock real</strong><span>sin sobreventa</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contenido Principal: Tienda -->
+    <main class="store-container" id="catalogo">
+        <!-- Filtros y Buscador -->
+        <aside class="sidebar" aria-label="Filtros del catálogo">
+            <div class="search-box">
+                <label for="searchInput" class="visually-hidden">Buscar producto</label>
+                <input type="search" id="searchInput" placeholder="Buscar producto..." autocomplete="off">
+            </div>
+
+            <h3>Categorías</h3>
+            <ul class="filter-categories">
+                <li><button class="filter-btn active" type="button" data-category="all">Todos</button></li>
+                <li><button class="filter-btn" type="button" data-category="perifericos">Periféricos</button></li>
+                <li><button class="filter-btn" type="button" data-category="componentes">Componentes</button></li>
+                <li><button class="filter-btn" type="button" data-category="accesorios">Accesorios</button></li>
+                <li><button class="filter-btn" type="button" data-category="merch">Merchandise</button></li>
+            </ul>
+
+            <h3>Filtros rápidos</h3>
+            <label class="toggle">
+                <input type="checkbox" id="saleToggle">
+                <span class="toggle-track" aria-hidden="true"></span>
+                <span>Solo ofertas</span>
+            </label>
+            <label class="toggle">
+                <input type="checkbox" id="stockToggle">
+                <span class="toggle-track" aria-hidden="true"></span>
+                <span>Solo con stock</span>
+            </label>
+
+            <h3>Ordenar</h3>
+            <select id="sortSelect" aria-label="Ordenar productos">
+                <option value="default">Relevancia</option>
+                <option value="price-asc">Precio: menor a mayor</option>
+                <option value="price-desc">Precio: mayor a menor</option>
+                <option value="rating-desc">Mejor valorados</option>
+            </select>
+        </aside>
+
+        <!-- Grid de Productos -->
+        <section class="products-area" aria-label="Productos">
+            <div class="products-toolbar">
+                <p id="resultsCount" aria-live="polite"></p>
+                <button class="chip" type="button" id="clearChip" hidden>Ver todos ×</button>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargan dinámicamente con JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal / Drawer del Carrito -->
+    <div class="drawer" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+        <div class="drawer-panel">
+            <div class="drawer-header">
+                <h2 id="cartTitle">Tu carrito</h2>
+                <button class="drawer-close" id="closeCart" type="button" aria-label="Cerrar carrito">&times;</button>
+            </div>
+
+            <div class="ship-progress" id="shipProgress" hidden>
+                <div class="ship-bar"><span id="shipBarFill"></span></div>
+                <p id="shipMsg"></p>
+            </div>
+
+            <div class="cart-items" id="cartItems">
+                <p class="empty-msg">Tu carrito está vacío</p>
+            </div>
+            <div class="cart-footer">
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="btn-primary btn-block" id="checkoutBtn" type="button" disabled>Finalizar compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de vista rápida -->
+    <div class="modal" id="quickModal" role="dialog" aria-modal="true" aria-labelledby="quickTitle" aria-hidden="true">
+        <div class="modal-panel" id="quickPanel">
+            <button class="modal-close" id="closeQuick" type="button" aria-label="Cerrar vista rápida">&times;</button>
+            <div class="modal-body" id="quickBody"><!-- Se rellena con JS --></div>
+        </div>
+    </div>
+
+    <!-- Notificaciones -->
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Pie de página -->
+    <footer class="site-footer">
+        <div class="footer-cols">
+            <div>
+                <p class="footer-logo">CENTRO DIGITAL <span>/ STORE</span></p>
+                <p class="footer-note">Tu tienda gamer con stock real, precios claros y garantía oficial.</p>
+            </div>
+            <nav aria-label="Enlaces de tienda">
+                <h4>Tienda</h4>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#catalogo" data-category="perifericos">Periféricos</a>
+                <a href="#catalogo" data-category="componentes">Componentes</a>
+            </nav>
+            <nav aria-label="Ayuda">
+                <h4>Ayuda</h4>
+                <a href="#">Envíos y devoluciones</a>
+                <a href="#">Garantía</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </div>
+        <p class="footer-legal">© <span id="year"></span> Centro Digital Store · Proyecto de demostración.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
